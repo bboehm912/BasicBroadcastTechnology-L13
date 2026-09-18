@@ -410,6 +410,16 @@ function renderForm(fields) {
   const submitBtn = form.querySelector('.submit-btn');
   form.innerHTML = '';
 
+  const nameGroup = document.createElement('div');
+  nameGroup.className = 'form-group';
+  nameGroup.innerHTML = '<label for="student-name">Student Name</label><input type="text" id="student-name" />';
+  form.appendChild(nameGroup);
+
+  const dateGroup = document.createElement('div');
+  dateGroup.className = 'form-group';
+  dateGroup.innerHTML = '<label for="checkpoint-date">Date</label><input type="date" id="checkpoint-date" />';
+  form.appendChild(dateGroup);
+
   const fieldList = Array.isArray(fields) ? fields : [];
 
   fieldList.forEach(field => {
